@@ -1,0 +1,2 @@
+# Studex
+Student Management System
