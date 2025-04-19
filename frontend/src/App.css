@@ -1,0 +1,27 @@
+.app-main{
+    height: 100%;
+    width: 100%;
+}
+.route-main{
+    height: 100vh;
+    width: 100vw;
+}
+.sidebar {
+    height: 100%;
+    width: 20%;
+}
+.content {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.rightside {
+    position: absolute;
+    right: 1.45em;
+}
+.leftside {
+    position: absolute;
+    bottom: 1.2em;
+}
