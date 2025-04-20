@@ -20,8 +20,12 @@
 .rightside {
     position: absolute;
     right: 1.45em;
+    transition: 1s;
+    transform: rotate(180deg);
 }
 .leftside {
     position: absolute;
     bottom: 1.2em;
+    transition: 1s;
+    transform: rotate(180deg);
 }
