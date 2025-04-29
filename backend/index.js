@@ -3,6 +3,9 @@ const app = express()
 const cors = require("cors")
 const cookie_parser = require("cookie-parser")
 const { connect_MySQL, sequelize } = require("./MySql/connection")
+const { UserRouter } = require("./Routes/user")
+const { CourseRouter } = require("./Routes/course")
+const { FeesRouter } = require("./Routes/fees")
 
 require("dotenv").config( { path : "./Security/secure.env" } )
 const port = process.env.PORT
@@ -14,9 +17,9 @@ app.use( cors() )
 
 connect_MySQL()
 
-app.get( "/" , ( req , res ) => {
-    res.send("Hlllo")
-} )
+app.use( "/user" , UserRouter )
+app.use( "/course" , CourseRouter )
+app.use( "/fees" , FeesRouter )
 
 app.listen( port , async () => {
     try{
