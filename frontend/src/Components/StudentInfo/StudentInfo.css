@@ -1,4 +1,48 @@
 .stdinfo-main {
     height: 100%;
     width: 100%;
+    flex-direction: column;
+}
+.studentinfi-head.flex {
+    height: 10%;
+    /* background-color: aliceblue; */
+}
+.student-search-input {
+    height: 20%;
+    /* background-color: aquamarine; */
+    width: 30%;
+    position: relative;
+}
+.stdinfo-search-content.flex {
+    height: 30%;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 5em;
+    justify-content: space-evenly;
+}
+.search-input  {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 80%;
+}
+.searched-content {
+    height: 70%;
+    /* background-color: antiquewhite; */
+    width: 100%;
+    position: relative;
+    /* bottom: 0; */
+}
+.drop-down {
+    position: absolute;
+    height: 20em;
+    width: 100%;
+    top: 6em;
+}
+.details {
+    height: 10%;
+    background-color: aliceblue;
+    border-bottom: 1px solid #bbbbbb;
+    justify-content: flex-start;
+    padding-left: 1em;
 }
