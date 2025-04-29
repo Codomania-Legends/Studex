@@ -1,83 +1,142 @@
 export const Data = [
-    {
-      "name": "Aarav Sharma",
-      "enrollment_number": "ENR2025001",
-      "year": 1,
-      "semester": 2,
-      "course": "B.Tech",
-      "department": "Computer Science"
-    },
-    {
-      "name": "Diya Patel",
-      "enrollment_number": "ENR2025002",
-      "year": 2,
-      "semester": 4,
-      "course": "B.Sc",
-      "department": "Mathematics"
-    },
-    {
-      "name": "Rohan Mehta",
-      "enrollment_number": "ENR2025003",
-      "year": 3,
-      "semester": 6,
-      "course": "B.Tech",
-      "department": "Mechanical Engineering"
-    },
-    {
-      "name": "Sneha Iyer",
-      "enrollment_number": "ENR2025004",
-      "year": 1,
-      "semester": 2,
-      "course": "BBA",
-      "department": "Business Administration"
-    },
-    {
-      "name": "Kabir Singh",
-      "enrollment_number": "ENR2025005",
-      "year": 4,
-      "semester": 8,
-      "course": "B.Tech",
-      "department": "Electronics and Communication"
-    },
-    {
-      "name": "Maya Reddy",
-      "enrollment_number": "ENR2025006",
-      "year": 2,
-      "semester": 3,
-      "course": "B.Sc",
-      "department": "Physics"
-    },
-    {
-      "name": "Vivaan Joshi",
-      "enrollment_number": "ENR2025007",
-      "year": 3,
-      "semester": 5,
-      "course": "B.Tech",
-      "department": "Civil Engineering"
-    },
-    {
-      "name": "Anaya Desai",
-      "enrollment_number": "ENR2025008",
-      "year": 1,
-      "semester": 1,
-      "course": "BCA",
-      "department": "Computer Applications"
-    },
-    {
-      "name": "Arjun Nair",
-      "enrollment_number": "ENR2025009",
-      "year": 4,
-      "semester": 7,
-      "course": "B.Tech",
-      "department": "Information Technology"
-    },
-    {
-      "name": "Ishita Kapoor",
-      "enrollment_number": "ENR2025010",
-      "year": 2,
-      "semester": 4,
-      "course": "B.Com",
-      "department": "Commerce"
-    }
-  ]
-  
+  {
+    "name": "Aarav Sharma",
+    "enrollment_number": "ENR2025001",
+    "year": 1,
+    "semester": 2,
+    "course": "B.Tech",
+    "department": "Computer Science",
+    "city": "Delhi",
+    "bus_facility": "Yes",
+    "fees_paid": "Yes",
+    "contact_number": "9876543210",
+    "father_name": "Rajesh Sharma",
+    "mother_name": "Sunita Sharma"
+  },
+  {
+    "name": "Diya Patel",
+    "enrollment_number": "ENR2025002",
+    "year": 2,
+    "semester": 4,
+    "course": "B.Sc",
+    "department": "Mathematics",
+    "city": "Ahmedabad",
+    "bus_facility": "No",
+    "fees_paid": "Yes",
+    "contact_number": "9823456781",
+    "father_name": "Mahesh Patel",
+    "mother_name": "Kiran Patel"
+  },
+  {
+    "name": "Rohan Mehta",
+    "enrollment_number": "ENR2025003",
+    "year": 3,
+    "semester": 6,
+    "course": "B.Tech",
+    "department": "Mechanical Engineering",
+    "city": "Mumbai",
+    "bus_facility": "Yes",
+    "fees_paid": "No",
+    "contact_number": "9988776655",
+    "father_name": "Prakash Mehta",
+    "mother_name": "Anjali Mehta"
+  },
+  {
+    "name": "Sneha Iyer",
+    "enrollment_number": "ENR2025004",
+    "year": 1,
+    "semester": 2,
+    "course": "BBA",
+    "department": "Business Administration",
+    "city": "Chennai",
+    "bus_facility": "No",
+    "fees_paid": "Yes",
+    "contact_number": "9090909090",
+    "father_name": "Suresh Iyer",
+    "mother_name": "Lakshmi Iyer"
+  },
+  {
+    "name": "Kabir Singh",
+    "enrollment_number": "ENR2025005",
+    "year": 4,
+    "semester": 8,
+    "course": "B.Tech",
+    "department": "Electronics and Communication",
+    "city": "Amritsar",
+    "bus_facility": "Yes",
+    "fees_paid": "Yes",
+    "contact_number": "9811122233",
+    "father_name": "Harjeet Singh",
+    "mother_name": "Simran Kaur"
+  },
+  {
+    "name": "Maya Reddy",
+    "enrollment_number": "ENR2025006",
+    "year": 2,
+    "semester": 3,
+    "course": "B.Sc",
+    "department": "Physics",
+    "city": "Hyderabad",
+    "bus_facility": "No",
+    "fees_paid": "No",
+    "contact_number": "9123456780",
+    "father_name": "Anil Reddy",
+    "mother_name": "Shanti Reddy"
+  },
+  {
+    "name": "Vivaan Joshi",
+    "enrollment_number": "ENR2025007",
+    "year": 3,
+    "semester": 5,
+    "course": "B.Tech",
+    "department": "Civil Engineering",
+    "city": "Pune",
+    "bus_facility": "Yes",
+    "fees_paid": "Yes",
+    "contact_number": "9870011223",
+    "father_name": "Ketan Joshi",
+    "mother_name": "Manisha Joshi"
+  },
+  {
+    "name": "Anaya Desai",
+    "enrollment_number": "ENR2025008",
+    "year": 1,
+    "semester": 1,
+    "course": "BCA",
+    "department": "Computer Applications",
+    "city": "Surat",
+    "bus_facility": "No",
+    "fees_paid": "Yes",
+    "contact_number": "9001122334",
+    "father_name": "Naresh Desai",
+    "mother_name": "Rita Desai"
+  },
+  {
+    "name": "Arjun Nair",
+    "enrollment_number": "ENR2025009",
+    "year": 4,
+    "semester": 7,
+    "course": "B.Tech",
+    "department": "Information Technology",
+    "city": "Kochi",
+    "bus_facility": "Yes",
+    "fees_paid": "Yes",
+    "contact_number": "9345612345",
+    "father_name": "Vishnu Nair",
+    "mother_name": "Meera Nair"
+  },
+  {
+    "name": "Ishita Kapoor",
+    "enrollment_number": "ENR2025010",
+    "year": 2,
+    "semester": 4,
+    "course": "B.Com",
+    "department": "Commerce",
+    "city": "Lucknow",
+    "bus_facility": "No",
+    "fees_paid": "No",
+    "contact_number": "9012345678",
+    "father_name": "Alok Kapoor",
+    "mother_name": "Neeta Kapoor"
+  }
+]

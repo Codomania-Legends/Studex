@@ -4,6 +4,8 @@ import search from '/assets/search.svg'
 import {Data} from '../Data/Data'
 function StudentInfo() {
   const[ inputVal, setInputVal ] = useState('')
+  const[ selected, setSelected ] = useState('')
+  const [ value, setValue ] = useState('')
   return (
     <main className="stdinfo-main flex ">
       <div className="studentinfi-head flex">
@@ -22,20 +24,49 @@ function StudentInfo() {
         </div>
         <div className="drop-down">
           { inputVal &&
-          
             Data.filter( (v) => 
               v?.name?.toLowerCase().includes( inputVal.toLowerCase() ) ||
               v?.enrollment_number?.toLowerCase().includes( inputVal.toLowerCase() )
             ).map( (v,i) => {
                 return(
-                  <div key={i} className="details flex">{v.name} - {v.enrollment_number}</div>
+                  <div key={i} className="details flex" onClick={ () => {
+                    setSelected(v.name)
+                    setInputVal("")
+                  } }>{v.name} - {v.enrollment_number}</div>
                 )
             } )
           }
         </div>
       </div>
-      <div className="searched-content">
-
+      <div className="searched-content flex">
+          {
+            selected && 
+            <div className=' v flex'>
+            
+            <h1 className="ansval flex" onClick={ () => setValue(selected) }>{selected} </h1>
+            <span>Click above for more info</span>
+            </div>
+          }
+      </div>
+      <div className="content-details flex">
+          {
+            Data.map( (v) => {
+              if( v.name == value ){
+                return(
+                  <div className='std-content'>
+                    <div className="enroll boxx flex"><span>Enrollment : </span>{ v.enrollment_number }</div>
+                    <div className="sem boxx flex"><span>Sem | Year</span>{ v.semester } | { v.year }</div>
+                    <div className="course boxx flex"><span>Course : </span>{ v.course }</div>
+                    <div className="dept boxx flex"><span>Dept : </span>{ v.department }</div>
+                    <div className="city boxx flex"><span>City : </span>{ v.city }</div>
+                    <div className="bus-facility boxx flex"><span>Bus Facility : </span>{ v.bus_facility }</div>
+                    <div className="fees-paid boxx flex"><span>Fees Paid : </span>{ v.fees_paid }</div>
+                    <div className="contact boxx flex"><span>Contact Number : </span>{ v.contact_number }</div>
+                  </div>
+                )
+              }
+            } )
+          }
       </div>
     </main>
   )

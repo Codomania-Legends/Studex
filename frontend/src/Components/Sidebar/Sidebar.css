@@ -13,7 +13,7 @@
     height: 100%;
 }
 .logo {
-    height: 10%;
+    height: 13%;
     width: 100%;
     /* background-color: aquamarine; */
     /* align-items: end; */
@@ -25,12 +25,12 @@
 .sidebar-content {
     flex-direction: column;
     /* background-color: antiquewhite; */
-    height: 65%;
+    height: 50%;
     width: 75%;
     justify-content: space-evenly;
 }
 .home, .student-info, .new-student, .course-detail, .fee-detail {
-    height: 9%;
+    height: 15%;
     width: 100%;
     gap: 0.5em;
     justify-content: start;
@@ -50,10 +50,10 @@
 }
 .sidebar-profile {
     gap: 1em;
-    height: 30%;
+    height: 46%;
     width: 100%;
     align-items: end;
 }
 .profile-pic {
-    height: 11%;
+    height: 8%;
 }

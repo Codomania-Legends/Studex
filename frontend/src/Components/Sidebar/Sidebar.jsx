@@ -28,13 +28,13 @@ function Sidebar() {
                 </div>
                 <span>Student Info</span>
               </div>
-              <div className="new-student flex">
+              <div className="new-student flex" onClick={() => window.location.href = "/newstd"}>
                 <div className="new-student-icon padding">
                     <img src={NewStudent} alt="" className="new-student-img" />
                 </div>
                 <span>New Student</span>
               </div>
-              <div className="course-detail flex">
+              {/* <div className="course-detail flex">
                 <div className="course-icon padding">
                     <img src={Course} alt="" className="course-img" />
                 </div>
@@ -45,7 +45,7 @@ function Sidebar() {
                     <img src={Fee} alt="" className="fee-img" />
                 </div>
                 <span>Fees Details</span>
-              </div>
+              </div> */}
             </div>
             <div className="sidebar-profile flex">
               <div className="profile-pic">

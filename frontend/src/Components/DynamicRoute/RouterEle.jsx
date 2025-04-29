@@ -6,6 +6,7 @@ import Sidebar from '../Sidebar/Sidebar.jsx'
 import rightside from '/assets/rightside.svg'
 import leftside from '/assets/leftside.svg'
 import '../../App.css'
+import NewStd from '../NewStudent/NewStd.jsx'
 function RouterEle() {
   const pathname = useParams()
   console.log(pathname)
@@ -24,6 +25,9 @@ function RouterEle() {
             }
             {
               ( pathname.route == "studentinfo" && <Search/> )
+            }
+            {
+              ( pathname.route == "newstd" && <NewStd/> )
             }
 
           </div>

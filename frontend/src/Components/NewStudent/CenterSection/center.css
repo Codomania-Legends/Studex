@@ -1,0 +1,71 @@
+.wrapper {
+    flex-direction: column;
+    height: 60%;
+    width: 80%;
+    background-image: linear-gradient(to right, #21437A, #4285F4);
+    border-radius: 4em;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+    color: white;
+    animation: popAnimation 0.4s linear 1;
+    font-size: medium;
+}
+.circleDivNumber {
+    color: black;
+    height: 8%;
+    aspect-ratio: 1 / 1;
+    background-image: linear-gradient(to right , #fff 0% 50% , #ECECEC 50% 100%);
+    border-radius: 50%;
+}
+@keyframes popAnimation{
+    0% {transform: scale(0);}
+    70%{ transform: scale(1.2); }
+    100%{ transform: scale(1); }
+}
+
+.inputsDivs1 {
+    height: 70%;
+    width: 50%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: start;
+}
+
+.nameDivinput , .genderDivinput , .mobileNumDivinput{
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+    text-shadow: 2px 2px 4px rgb(0 0 0 /25%) ;
+}
+
+.nameInput , .genderInput , .mobileNumInput{
+    width: 100%;
+    outline: none;
+    border: 0;
+    border-radius: 5em;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    appearance: none;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+}
+label{
+    font-size: small;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+button.submitMoveToNext {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 5em;
+    background: white;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+}
+button.submitMoveToNext:hover{
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+    transition: 0.5s;
+}
+
+.buttonOfSubmit{
+    height: 15%;
+}

@@ -46,3 +46,125 @@
     justify-content: flex-start;
     padding-left: 1em;
 }
+.content-details{
+    position: absolute;
+}
+.std-content {
+    position: absolute;
+    right: 5em;
+}
+.v {
+    flex-direction: column;
+}
+.boxx {
+    height: 4em;
+    width: 10em;
+    background-color: #BABABA;
+    border-radius: 1em;
+    flex-direction: column;
+    position: absolute;
+}
+.enroll{
+    animation: enroll2 1s ease-in-out 1;
+    transform: rotate(-180deg) translateX(20em) translateY(7em) rotate(180deg);
+}
+.sem{
+    animation: sem 1s ease-in-out 1;
+    transform: rotate(180deg) translateX(-20em) translateY(-4em) rotate(-180deg);
+    
+}
+.course{
+    animation: course 1s ease-in-out 1;
+    transform: rotate(160deg) translateX(-19em) translateY(3em) rotate(-160deg);
+}
+.dept{
+    animation: dept 1s ease-in-out 1;
+    transform: rotate(160deg) translateX(-16em) translateY(-21em) rotate(-160deg);
+}
+.city{
+    animation: city 1s ease-in-out 1;
+    transform: rotate(-160deg) translateX(23em) translateY(-15em) rotate(160deg);
+    
+}
+.fees-paid{
+    animation: fees-paid 1s ease-in-out 1;
+    transform: rotate(160deg) translateX(5em) translateY(-10em) rotate(-160deg);
+    
+}
+.bus-facility{
+    animation: bus-facility 1s ease-in-out 1;
+    transform: rotate(-160deg) translateX(8em) translateY(-20em) rotate(160deg);
+    
+}
+.contact{
+    animation: contact 1s ease-in-out 1;
+    transform: rotate(160deg) translateX(3em) translateY(5em) rotate(-160deg);
+
+}
+@keyframes enroll2 {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg) translateX(20em) translateY(7em) rotate(180deg);
+  }
+}
+@keyframes sem {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg) translateX(-20em) translateY(-4em) rotate(-180deg);
+  }
+}
+@keyframes course {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg) translateX(-19em) translateY(3em) rotate(-160deg);
+  }
+}
+  
+@keyframes dept {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg) translateX(-16em) translateY(-21em) rotate(-160deg);
+  }
+}
+@keyframes city {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-160deg) translateX(23em) translateY(-15em) rotate(160deg);
+  }
+}
+@keyframes fees-paid {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg) translateX(5em) translateY(-10em) rotate(-160deg);
+  }
+}
+@keyframes bus-facility {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-160deg) translateX(8em) translateY(-20em) rotate(160deg);
+  }
+}
+@keyframes contact {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg) translateX(3em) translateY(5em) rotate(-160deg);
+  }
+}
+
+  
