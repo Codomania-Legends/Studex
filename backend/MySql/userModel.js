@@ -1,5 +1,5 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "./connection";
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("./connection");
 
 const GeneralInfo = sequelize.define( "GeneralInfo" , {
     name : { type : DataTypes.STRING },
