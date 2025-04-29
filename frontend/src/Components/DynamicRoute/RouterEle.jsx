@@ -17,8 +17,8 @@ function RouterEle() {
         </div>
         <div className="content flex">
           <div className="baksa">
-            <img src={rightside} alt="" className='rightside' />
-            <img src={leftside} alt="" className='leftside' />
+            <img src={leftside} alt="" className='rightside' />
+            <img src={rightside} alt="" className='leftside' />
             {
               ( pathname.route == "home" && <Home/> )
             }
