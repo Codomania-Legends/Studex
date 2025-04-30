@@ -26,7 +26,7 @@ function INPUT4() {
         </div>
       </div>
       <div className='buttonOfSubmit flex'>
-        <button className='submitMoveToNext' onClick={() => set_numShow(1)}>Next</button>
+        <button className='submitMoveToNext' onClick={() => set_numShow(4)}>Next</button>
       </div>
     </div>
   )

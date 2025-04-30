@@ -6,27 +6,22 @@ function INPUT3() {
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
-      <div className="inputsDivs1 flex">
-        <div className="nameDivinput flex">
-          <label for="nameInput">Your name</label>
-          <input name="nameInput" className = "nameInput" />
+        <div className='gridDivInputs'>
+          <div className='FathersName box-occupation'>
+            <label htmlFor='fathersName'>Father's Name</label>
+          </div>
+          <div className='FathersName box-occupation'>
+            <label htmlFor='fathersName'>Occupation</label>
+          </div>
+          <div className='FathersName box-occupation'>
+            <label htmlFor='fathersName'>Mother's Name</label>
+          </div>
+          <div className='FathersName box-occupation'>
+            <label htmlFor='fathersName'>Occupation</label>
+          </div>
         </div>
-        <div className="genderDivinput flex">
-          <label for="genderInput">Gender</label>
-          <select name="genderInput" className = "genderInput">
-            <option>-- Gender --</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Rather not to say</option>
-          </select>
-        </div>
-        <div className="mobileNumDivinput flex">
-          <label for="mobileNumInput">Mobile Number</label>
-          <input name="mobileNumInput" className = "mobileNumInput" />
-        </div>
-      </div>
       <div className='buttonOfSubmit flex'>
-        <button className='submitMoveToNext' onClick={() => set_numShow(1)}>Next</button>
+        <button className='submitMoveToNext' onClick={() => set_numShow(3)}>Next</button>
       </div>
     </div>
   )
