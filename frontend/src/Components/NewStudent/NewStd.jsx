@@ -18,6 +18,7 @@ function NewStd() {
 
   return (
     <main className="newstd-main flex">
+      
         <section style={{zIndex : 2}} className="leftSection flex">
           <LeftSection num_to_show={num_to_show} set_numShow={set_numShow} text_heading={ headingNum } />
         </section>

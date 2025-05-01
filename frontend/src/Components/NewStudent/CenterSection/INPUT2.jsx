@@ -6,25 +6,24 @@ function INPUT2() {
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
-      <div className="inputsDivs1 flex">
-        <div className="nameDivinput flex">
-          <label for="nameInput">Your name</label>
-          <input name="nameInput" className = "nameInput" />
+        <div className='gridDivInputs'>
+          <div className='FathersName box-occupation flex'>
+            <label htmlFor='fathersName'>Father's Name</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Fathers Name'/>
+          </div>
+          <div className='FathersName box-occupation flex'>
+            <label htmlFor='fathersName'>Occupation</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Occupation'/>
+          </div>
+          <div className='FathersName box-occupation flex'>
+            <label htmlFor='fathersName'>Mother's Name</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Mothers Name'/>
+          </div>
+          <div className='FathersName box-occupation flex'>
+            <label htmlFor='fathersName'>Occupation</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Occupation'/>
+          </div>
         </div>
-        <div className="genderDivinput flex">
-          <label for="genderInput">Gender</label>
-          <select name="genderInput" className = "genderInput">
-            <option>-- Gender --</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Rather not to say</option>
-          </select>
-        </div>
-        <div className="mobileNumDivinput flex">
-          <label for="mobileNumInput">Mobile Number</label>
-          <input name="mobileNumInput" className = "mobileNumInput" />
-        </div>
-      </div>
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => set_numShow(2)}>Next</button>
       </div>

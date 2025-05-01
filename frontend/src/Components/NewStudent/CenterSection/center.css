@@ -38,7 +38,7 @@
     text-shadow: 2px 2px 4px rgb(0 0 0 /25%) ;
 }
 
-.nameInput , .genderInput , .mobileNumInput{
+.nameInput , .genderInput , .mobileNumInput , .inputFieldOcuupation , .addressInputCityPin , .addressAddressInput{
     width: 100%;
     outline: none;
     border: 0;
@@ -60,12 +60,56 @@ button.submitMoveToNext {
     border-radius: 5em;
     background: white;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    cursor: pointer;
 }
 button.submitMoveToNext:hover{
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .buttonOfSubmit{
     height: 15%;
+}
+img.star {
+    height: 1em;
+}
+.mainCenter{
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.heading {
+    position: absolute;
+    top: 5em;
+}
+
+/* INPUT2 */
+.gridDivInputs {
+    height: 70%;
+    display: grid
+;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    gap: 1em;
+}
+.box-occupation {
+    align-items: start;
+    flex-direction: column;
+}
+/* INPUT4 */
+.AddressInput3{
+    height: 70%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.addressDiv , .cityBoxDiv , .pinBoxDiv{
+    align-items: start;
+    flex-direction: column;
+}
+.cityAndPincode {
+    display: grid
+;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
 }

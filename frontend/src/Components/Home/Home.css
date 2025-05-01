@@ -4,9 +4,15 @@
     flex-direction: column
     ;
 }
-.heading1, .heading2 {
-    height: 20%;
+.heading1{
+    height: 15%;
+    font-size: x-large;
+    width: 35em;
+    margin-left: -15em;
 }
 .heading2 {
+    height: 15%;
+    font-size: x-large;
     width: 69%;
+    padding-left: 13em;
 }

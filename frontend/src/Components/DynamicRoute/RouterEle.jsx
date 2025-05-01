@@ -7,6 +7,7 @@ import rightside from '/assets/rightside.svg'
 import leftside from '/assets/leftside.svg'
 import '../../App.css'
 import NewStd from '../NewStudent/NewStd.jsx'
+import NewFeature from '../NewFeature/NewFeature.jsx'
 function RouterEle() {
   const pathname = useParams()
   console.log(pathname)
@@ -28,6 +29,9 @@ function RouterEle() {
             }
             {
               ( pathname.route == "newstd" && <NewStd/> )
+            }
+            {
+              ( pathname.route == "newfeat" && <NewFeature/> )
             }
 
           </div>

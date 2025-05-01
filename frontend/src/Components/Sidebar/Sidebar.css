@@ -25,12 +25,12 @@
 .sidebar-content {
     flex-direction: column;
     /* background-color: antiquewhite; */
-    height: 50%;
+    height: 60%;
     width: 75%;
     justify-content: space-evenly;
 }
 .home, .student-info, .new-student, .course-detail, .fee-detail {
-    height: 15%;
+    height: 10%;
     width: 100%;
     gap: 0.5em;
     justify-content: start;
@@ -38,6 +38,7 @@
     transition: 1s;
     border-radius: 0.7em;
     /* background: aliceblue; */
+    cursor: pointer;
 }
 .padding{
     padding-left: 1em;
@@ -50,10 +51,10 @@
 }
 .sidebar-profile {
     gap: 1em;
-    height: 46%;
+    height: 35%;
     width: 100%;
     align-items: end;
 }
 .profile-pic {
-    height: 8%;
+    height: 10%;
 }

@@ -6,23 +6,20 @@ function INPUT4() {
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
-      <div className="inputsDivs1 flex">
-        <div className="nameDivinput flex">
-          <label for="nameInput">Your name</label>
-          <input name="nameInput" className = "nameInput" />
+      <div className="AddressInput3">
+        <div className="addressDiv flex">
+            <label htmlFor="">Address</label>
+            <input className="addressAddressInput" placeholder='Enter your fulll address' />
         </div>
-        <div className="genderDivinput flex">
-          <label for="genderInput">Gender</label>
-          <select name="genderInput" className = "genderInput">
-            <option>-- Gender --</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Rather not to say</option>
-          </select>
-        </div>
-        <div className="mobileNumDivinput flex">
-          <label for="mobileNumInput">Mobile Number</label>
-          <input name="mobileNumInput" className = "mobileNumInput" />
+        <div className="cityAndPincode">
+          <div className="cityBoxDiv flex">
+            <label htmlFor="">City</label>
+            <input className="addressInputCityPin" placeholder='Enter City'/>
+          </div>
+          <div className="pinBoxDiv flex">
+            <label htmlFor="">Pincode</label>
+            <input className="addressInputCityPin" placeholder='Enter Pincode'/>
+          </div>
         </div>
       </div>
       <div className='buttonOfSubmit flex'>

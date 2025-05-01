@@ -16,13 +16,18 @@ function CenterSection({ num_to_show, set_numShow, text_heading }) {
   }
 
   return (
-    <NumberContext.Provider value={contextValue}>
-      {num_to_show === 0 && <INPUT1 />}
-      {num_to_show === 1 && <INPUT2 />}
-      {num_to_show === 2 && <INPUT3 />}
-      {num_to_show === 3 && <INPUT4 />}
-      {num_to_show === 4 && <INPUT5 />}
-    </NumberContext.Provider>
+    <main className='mainCenter flex'> 
+    <div className="heading">
+      <h1>Add New Student</h1>
+    </div>
+      <NumberContext.Provider value={contextValue}>
+        {num_to_show === 0 && <INPUT1 />}
+        {num_to_show === 1 && <INPUT2 />}
+        {num_to_show === 2 && <INPUT3 />}
+        {num_to_show === 3 && <INPUT4 />}
+        {num_to_show === 4 && <INPUT5 />}
+      </NumberContext.Provider>
+    </main>
   )
 }
 

@@ -6,18 +6,22 @@ function INPUT3() {
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
-        <div className='gridDivInputs'>
-          <div className='FathersName box-occupation'>
-            <label htmlFor='fathersName'>Father's Name</label>
+      <div className='gridDivInputs'>
+          <div className='coursename box-occupation flex'>
+            <label htmlFor='coursename'>Course Name</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Course'/>
           </div>
-          <div className='FathersName box-occupation'>
-            <label htmlFor='fathersName'>Occupation</label>
+          <div className='Program box-occupation flex'>
+            <label htmlFor='Program'>Program</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Program' />
           </div>
-          <div className='FathersName box-occupation'>
-            <label htmlFor='fathersName'>Mother's Name</label>
+          <div className='Year box-occupation flex'>
+            <label htmlFor='Year'>Year</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Year'/>
           </div>
-          <div className='FathersName box-occupation'>
-            <label htmlFor='fathersName'>Occupation</label>
+          <div className='Enrollment box-occupation flex'>
+            <label htmlFor='Enrollment'>Enrollment Number</label>
+            <input className="inputFieldOcuupation" placeholder='Enter Enrollment Number'/>
           </div>
         </div>
       <div className='buttonOfSubmit flex'>
