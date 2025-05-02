@@ -22,6 +22,8 @@ function StudentInfo() {
           onChange={ (e) => setInputVal(e.target.value) }
           />
         </div>
+
+        {/* drop down starts here */}
         <div className="drop-down">
           { inputVal &&
             Data.filter( (v) => 
@@ -38,6 +40,8 @@ function StudentInfo() {
           }
         </div>
       </div>
+
+      {/* Searched content will be shown here */}
       <div className="searched-content flex">
           {
             selected && 
