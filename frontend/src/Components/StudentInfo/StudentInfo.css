@@ -41,19 +41,24 @@
 }
 .drop-down {
   position: absolute;
-  height: 20em;
+  height: 22em;
   width: 100%;
-  top: 6.7em;
+  top: 5.7em;
   border-radius: 2em;
-  background-color: transparent;
-  }
-  .details {
-    background-color: #ffffff;
-    height: 10%;
-    /* border-bottom: 1px solid #bbbbbb; */
-    justify-content: flex-start;
-    padding-left: 1em;
-
+  background-color: #ffffff;
+  border-radius: 2em;
+  z-index: 1;
+  /* overflow: scroll; */
+}
+.details {
+  background-color: #ffffff;
+  height: 2em;
+  /* border-bottom: 1px solid #bbbbbb; */
+  justify-content: flex-start;
+  padding-left: 1em;
+  cursor: pointer;
+  border-radius: 1em;
+  /* overflow: scroll; */
 }
 .content-details{
     position: absolute;
@@ -67,46 +72,45 @@
 }
 .boxx {
     height: 4em;
-    width: 10em;
+    width: 12em;
     background-color: #BABABA;
     border-radius: 1em;
     flex-direction: column;
     position: absolute;
 }
 .enroll{
-    animation: enroll2 1s ease-in-out 1;
+    animation: enroll2 1s ease-out 1;
     transform: rotate(-180deg) translateX(20em) translateY(7em) rotate(180deg);
 }
 .sem{
-    animation: sem 1s ease-in-out 1;
+    animation: sem 1.4s ease-out 1;
     transform: rotate(180deg) translateX(-20em) translateY(-4em) rotate(-180deg);
     
 }
 .course{
-    animation: course 1s ease-in-out 1;
+    animation: course 1.8s ease-out 1;
     transform: rotate(160deg) translateX(-19em) translateY(3em) rotate(-160deg);
 }
 .dept{
-    animation: dept 1s ease-in-out 1;
+    animation: dept 2.2s ease-out 1;
     transform: rotate(160deg) translateX(-16em) translateY(-21em) rotate(-160deg);
 }
 .city{
-    animation: city 1s ease-in-out 1;
+    animation: city 2.6s ease-out 1;
     transform: rotate(-160deg) translateX(23em) translateY(-15em) rotate(160deg);
     
 }
 .fees-paid{
-    animation: fees-paid 1s ease-in-out 1;
+    animation: fees-paid 3s ease-out 1;
     transform: rotate(160deg) translateX(5em) translateY(-10em) rotate(-160deg);
     
 }
-.bus-facility{
-    animation: bus-facility 1s ease-in-out 1;
-    transform: rotate(-160deg) translateX(8em) translateY(-20em) rotate(160deg);
-    
+.bus-facility {
+  animation: bus-facility 3.4s ease-out 1;
+  transform: rotate(-160deg) translateX(11em) translateY(-19em) rotate(160deg);
 }
 .contact{
-    animation: contact 1s ease-in-out 1;
+    animation: contact 3.8s ease-out 1;
     transform: rotate(160deg) translateX(3em) translateY(5em) rotate(-160deg);
 
 }
@@ -164,7 +168,7 @@
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
   }
   100% {
-    transform: rotate(-160deg) translateX(8em) translateY(-20em) rotate(160deg);
+    transform: rotate(-160deg) translateX(11em) translateY(-19em) rotate(160deg);
   }
 }
 @keyframes contact {

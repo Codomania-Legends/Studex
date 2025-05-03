@@ -19,12 +19,14 @@ function StudentInfo() {
           placeholder='Student Info' 
           className='search-input'
           value={inputVal}
-          onChange={ (e) => setInputVal(e.target.value) }
+          onChange={ (e) => setInputVal(e.target.value) 
+          
+          }
           />
         </div>
 
         {/* drop down starts here */}
-        <div className="drop-down">
+        {inputVal != "" && <div className="drop-down">
           { inputVal &&
             Data.filter( (v) => 
               v?.name?.toLowerCase().includes( inputVal.toLowerCase() ) ||
@@ -38,7 +40,7 @@ function StudentInfo() {
                 )
             } )
           }
-        </div>
+        </div>}
       </div>
 
       {/* Searched content will be shown here */}
@@ -77,3 +79,12 @@ function StudentInfo() {
 }
 
 export default StudentInfo
+
+
+// naam
+// pehchan
+// ghar
+// zaat
+// saans
+// sb kuch
+// ishq
