@@ -1,25 +1,31 @@
+const { COURSE } = require( "../MySql/courseModel.js");
 const { GeneralInfo } = require("../MySql/userModel.js");
 
 async function PostUserDetailsReqRes(req, res) {
+    console.log("Gotcha")
     const {
         name, enrollmentNumber, gender, mobileNumber,
-        fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber,
-        course_id, course_name, program, year, semester,
-        address, city, pincode, busFacility, busStop
+        fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
+        address, city, pincode, busFacility, busStop, course_id // Added course_id
     } = req.body;
 
     try {
+        console.log(req.body)
         const newUser = await GeneralInfo.create({
             name, enrollmentNumber, gender, mobileNumber,
-            fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber,
-            course_id, course_name, program, year, semester,
-            address, city, pincode, busFacility, busStop
+            fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
+            address, city, pincode, busFacility : busFacility || false , busStop : busStop || false
+        });
+
+        const newRegistredStudent = await COURSE.increment('total_registered_students', {
+            by: 1,
+            where: { course_id } // Fixed course_id usage
         });
 
         return res.status(201).json({ msg: "User created successfully!", user: newUser });
     } catch (error) {
         console.error("Sequelize Error:", error);
-        return res.status(500).json({ msg: "Internal server error", error });
+        return res.json({ msg: "User Already Exists" });
     }
 }
 
@@ -71,12 +77,12 @@ async function UpdateUserDetailsReqRes(req, res) {
 }
 
 async function FilterUsersByCourseOrSemester(req, res) {
-    const { course_id, semester } = req.query;
+    const { course_name, semester } = req.query; // Changed course_id to course_name
 
     try {
         const users = await GeneralInfo.findAll({
             where: {
-                ...(course_id && { course_id }),
+                ...(course_name && { course_name }), // Updated to use course_name
                 ...(semester && { semester })
             }
         });
@@ -89,12 +95,11 @@ async function FilterUsersByCourseOrSemester(req, res) {
 }
 
 
-export default {
+module.exports = {
     PostUserDetailsReqRes,
     GetUserDetailsReqRes,
     GetSingleUserByEnrollmentReqRes,
     UpdateUserDetailsReqRes,
-    DeleteUserReqRes,
     FilterUsersByCourseOrSemester
 };
 

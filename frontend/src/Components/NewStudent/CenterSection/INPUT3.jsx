@@ -1,5 +1,6 @@
 import React, { useContext , useState } from 'react'
 import { NumberContext } from './CenterSection'
+import { all } from 'axios'
 
 function INPUT3() {
   const { num_to_show, set_numShow, text_heading , setAllDetails } = useContext(NumberContext)
@@ -13,10 +14,17 @@ function INPUT3() {
       <div className='gridDivInputs'>
           <div className='coursename box-occupation flex'>
             <label htmlFor='coursename'>Course Name</label>
-            <input
+            <select
               value={course_name}
               onChange={ (e) => setCourseName(e.target.value) }
-             className="inputFieldOcuupation" placeholder='Enter Course'/>
+             className="inputFieldOcuupation" placeholder='Enter Course'>
+                <option value="">-- Course Name --</option>
+                <option value={"Bachelor of Computer Science"}>Bachelor of Computer Science</option>
+                <option value={"Bachelor of Business Administration"}>Bachelor of Business Administration</option>
+                <option value={"Bachelor of Engineering in Mechanical"}>Bachelor of Engineering in Mechanical</option>
+                <option value={"Bachelor of Technology in AI & ML"}>Bachelor of Technology in AI & ML</option>
+                <option value={"Bachelor of Arts in Psychology"}>Bachelor of Arts in Psychology</option>
+             </select>
           </div>
           <div className='Program box-occupation flex'>
             <label htmlFor='Program'>Program</label>
@@ -49,9 +57,25 @@ function INPUT3() {
               program : program,
               enrollmentNumber : enrollmentNumber
              }) )
-            set_numShow(3)
-          }
-        }}>Next</button>
+             switch(course_name){
+              case "Bachelor of Computer Science":
+                setAllDetails( (prev) => ({...prev , course_id : 101}) )
+                break;
+              case "Bachelor of Business Administration":
+                setAllDetails( (prev) => ({...prev , course_id : 102}) )
+                break;
+              case "Bachelor of Engineering in Mechanical":
+                setAllDetails( (prev) => ({...prev , course_id : 103}) )
+                break;
+              case "Bachelor of Technology in AI & ML":
+                setAllDetails( (prev) => ({...prev , course_id : 104}) )
+                break;
+              case "Bachelor of Arts in Psychology":
+                setAllDetails( (prev) => ({...prev , course_id : 105}) )
+                break;
+              }
+              set_numShow(3)
+        }}}>Next</button>
       </div>
     </div>
   )

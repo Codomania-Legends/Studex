@@ -17,6 +17,10 @@ async function PostFeeDetailsReqRes(req, res) {
         semester_8_fee
     } = req.body;
 
+    if (!enrollment_no || !course_name || !course_id || !total_course_fee) {
+        return res.status(400).json({ msg: "Missing required fields" });
+    }
+
     try {
         const newFee = await FEES.create({
             enrollment_no,
@@ -36,6 +40,9 @@ async function PostFeeDetailsReqRes(req, res) {
         return res.status(201).json({ msg: "Fee details added successfully!", fee: newFee });
     } catch (error) {
         console.error("Sequelize Error:", error);
+        if (error.name === "SequelizeValidationError") {
+            return res.status(400).json({ msg: "Validation error", error });
+        }
         return res.status(500).json({ msg: "Internal server error", error });
     }
 }
@@ -55,6 +62,10 @@ async function GetAllFeesReqRes(req, res) {
 async function GetFeeByEnrollmentReqRes(req, res) {
     const { enrollment_no } = req.params;
 
+    if (!enrollment_no) {
+        return res.status(400).json({ msg: "Enrollment number is required" });
+    }
+
     try {
         const fee = await FEES.findOne({ where: { enrollment_no } });
         if (!fee) {
@@ -71,6 +82,14 @@ async function GetFeeByEnrollmentReqRes(req, res) {
 async function UpdateFeeDetailsReqRes(req, res) {
     const { enrollment_no } = req.params;
     const updatedData = req.body;
+
+    if (!enrollment_no) {
+        return res.status(400).json({ msg: "Enrollment number is required" });
+    }
+
+    if (!updatedData || Object.keys(updatedData).length === 0) {
+        return res.status(400).json({ msg: "No data provided for update" });
+    }
 
     try {
         const [updated] = await FEES.update(updatedData, {
@@ -92,6 +111,10 @@ async function UpdateFeeDetailsReqRes(req, res) {
 // ❌ Delete fee record by enrollment number
 async function DeleteFeeRecordReqRes(req, res) {
     const { enrollment_no } = req.params;
+
+    if (!enrollment_no) {
+        return res.status(400).json({ msg: "Enrollment number is required" });
+    }
 
     try {
         const deleted = await FEES.destroy({
