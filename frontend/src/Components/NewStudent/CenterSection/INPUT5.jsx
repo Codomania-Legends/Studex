@@ -3,7 +3,9 @@ import { NumberContext } from './CenterSection'
 import star from '/assets/star.png'
 
 function INPUT5() {
-  const { num_to_show, set_numShow, text_heading } = useContext(NumberContext)
+  const { num_to_show, set_numShow, text_heading , setAllDetails } = useContext(NumberContext)
+  const [ busFacility , setBus ] = useState("")
+  const [ busStop , setStop ] = useState("")
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
@@ -12,18 +14,26 @@ function INPUT5() {
           <label for="nameInput">
             <img src={star} alt="" className='star'/>
             Bus Facility</label>
-          <input name="nameInput" className = "nameInput" placeholder='Yess/No'/>
+          <input 
+            value={busFacility}
+
+          
+            name="nameInput" className = "nameInput" placeholder='Yess/No'/>
         </div>
 
         <div className="mobileNumDivinput flex">
           <label for="mobileNumInput">
             <img src={star} alt="" className='star'/>
             Bus Stop</label>
-          <input name="mobileNumInput" className = "mobileNumInput" placeholder='Enter Bus Stop'/>
+          <input 
+            value={busFacility}
+
+          
+            name="mobileNumInput" className = "mobileNumInput" placeholder='Enter Bus Stop'/>
         </div>
       </div>
       <div className='buttonOfSubmit flex'>
-        <button className='submitMoveToNext' onClick={() => set_numShow(0)}>Submit</button>
+        <button className='submitMoveToNext' onClick={() => alert("Information Submitted")}>Submit</button>
       </div>
     </div>
   )
