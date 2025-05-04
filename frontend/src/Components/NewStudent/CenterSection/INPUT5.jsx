@@ -16,8 +16,8 @@ function INPUT5() {
             Bus Facility</label>
           <input 
             value={busFacility}
-
-          
+            onChange={(e) => setBus(e.target.value)}
+            
             name="nameInput" className = "nameInput" placeholder='Yess/No'/>
         </div>
 
@@ -26,14 +26,22 @@ function INPUT5() {
             <img src={star} alt="" className='star'/>
             Bus Stop</label>
           <input 
-            value={busFacility}
-
+            value={busStop}
+            onChange={(e) => setStop(e.target.value)}
+            
           
             name="mobileNumInput" className = "mobileNumInput" placeholder='Enter Bus Stop'/>
         </div>
       </div>
       <div className='buttonOfSubmit flex'>
-        <button className='submitMoveToNext' onClick={() => alert("Information Submitted")}>Submit</button>
+        <button className='submitMoveToNext' onClick={() => {
+          setAllDetails((prev) => [{...prev,...prev[0],
+            busFacility : busFacility,
+            busStop : busStop
+          }])
+          // const res = await 
+          alert(res?.data?.msg || res?.data.err)
+        }}>Submit</button>
       </div>
     </div>
   )

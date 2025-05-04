@@ -34,7 +34,7 @@ function INPUT4() {
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => {
           if( address != "" && city != "" && pincode != "" ){
-            setAllDetails( (prev) => [ ...prev, {
+            setAllDetails( (prev) => [ {...prev,...prev[0],
               address : address,
               city : city,
               pincode : pincode

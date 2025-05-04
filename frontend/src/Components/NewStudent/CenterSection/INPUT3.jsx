@@ -43,7 +43,7 @@ function INPUT3() {
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => {
           if( course_name != "" && year != "" && program != "" && enrollmentNumber != "" ){
-            setAllDetails( (prev) => [...prev , { 
+            setAllDetails( (prev) => [{...prev , ...prev[0],
               course_name : course_name,
               year : year,
               program : program,

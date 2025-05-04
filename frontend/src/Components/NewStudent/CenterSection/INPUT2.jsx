@@ -39,7 +39,7 @@ function INPUT2() {
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => {
            if( fatherName != "" && mothersName != "" && f_occupation != "" && m_occupation != "" ){
-            setAllDetails( (prev) => [ ...prev, {
+            setAllDetails( (prev) => [ {...prev, ...prev[0],
               fatherName : fatherName,
               mothersName : mothersName,
               f_occupation : f_occupation,

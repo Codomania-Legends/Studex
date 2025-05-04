@@ -1,5 +1,6 @@
 import React from 'react'
 import './CourseDetails.css'
+import {Data} from '../Data/Data.jsx'
 function CourseDetails() {
   return (
     <>
@@ -8,44 +9,15 @@ function CourseDetails() {
             <h1>Course Details</h1>
           </div>
           <div className="center-box-div flex">
-            <div className="box-content flex">
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
-              <h1>hillo</h1>
+            <div className="box-content ">
+              {
+                Data.map( (v,i) => {
+                    return(
+                      <div key={i} className="content-details flex"
+                      >{v.name} - {v.enrollment_number}</div>
+                    )
+                } )
+              }
             </div>
           </div>
         </main>
