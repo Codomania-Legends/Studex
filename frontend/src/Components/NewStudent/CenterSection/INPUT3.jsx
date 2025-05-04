@@ -1,6 +1,6 @@
 import React, { useContext , useState } from 'react'
 import { NumberContext } from './CenterSection'
-import { all } from 'axios'
+// import { all } from 'axios'
 
 function INPUT3() {
   const { num_to_show, set_numShow, text_heading , setAllDetails } = useContext(NumberContext)

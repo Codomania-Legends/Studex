@@ -1,7 +1,7 @@
 import React, { useContext , useState } from 'react'
 import { NumberContext } from './CenterSection'
 import star from '/assets/star.png'
-import axios from "axios"
+// import axios from "axios"
 
 function INPUT5({allDetails}) {
   const { num_to_show, set_numShow, text_heading , setAllDetails } = useContext(NumberContext)
