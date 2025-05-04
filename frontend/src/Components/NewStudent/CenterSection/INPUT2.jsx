@@ -1,53 +1,53 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { NumberContext } from './CenterSection'
 
 function INPUT2() {
-  const { num_to_show, set_numShow , setAllDetails } = useContext(NumberContext)
-    const [ input1 , setInput1 ] = useState("")
-    const [ input2 , setInput2 ] = useState("")
-    const [ input3 , setInput3 ] = useState("")
-    const [ input4 , setInput4 ] = useState("")
+  const { num_to_show, set_numShow, texxxxt_heading, setAllDetails } = useContext(NumberContext)
+  const[ fatherName, setfatherName ] = useState("")
+  const[ f_occupation, setf_occupation ] = useState("")
+  const[ mothersName, setmothersName ] = useState("")
+  const[ m_occupation, setm_occupation ] = useState("")
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
         <div className='gridDivInputs'>
           <div className='FathersName box-occupation flex'>
             <label htmlFor='fathersName'>Father's Name</label>
-            <input 
-              value={input1}
-              onChange={(e) => setInput1(e.target.value)}
-              name='fatherName' 
-              className="inputFieldOcuupation" placeholder='Enter Fathers Name'/>
+            <input className="inputFieldOcuupation" placeholder='Enter Fathers Name'
+            value={fatherName}
+            onChange={(e) => setfatherName(e.target.value)}/>
           </div>
           <div className='FathersName box-occupation flex'>
             <label htmlFor='fathersName'>Occupation</label>
-            <input 
-              value={input2}
-              onChange={(e) => setInput2(e.target.value)}
-              name='f_occupation' 
-              className="inputFieldOcuupation" placeholder='Enter Occupation'/>
+            <input className="inputFieldOcuupation" placeholder='Enter Occupation'
+            value={f_occupation}
+            onChange={(e) => setf_occupation(e.target.value)}/>
           </div>
           <div className='FathersName box-occupation flex'>
             <label htmlFor='fathersName'>Mother's Name</label>
-            <input 
-              value={input3}
-              onChange={(e) => setInput3(e.target.value)}
-              name='mothersName' 
-              className="inputFieldOcuupation" placeholder='Enter Mothers Name'/>
+            <input className="inputFieldOcuupation" placeholder='Enter Mothers Name'
+            value={mothersName}
+            onChange={(e) => setmothersName(e.target.value)}/>
           </div>
           <div className='FathersName box-occupation flex'>
             <label htmlFor='fathersName'>Occupation</label>
-            <input 
-              value={input4}
-              onChange={(e) => setInput4(e.target.value)}
-              name='m_occupation' 
-              className="inputFieldOcuupation" placeholder='Enter Occupation'/>
+            <input className="inputFieldOcuupation" placeholder='Enter Occupation'
+            value={m_occupation}
+            onChange={(e) => setm_occupation(e.target.value)}/>
           </div>
         </div>
       <div className='buttonOfSubmit flex'>
-      <button className='submitMoveToNext' onClick={() => {
-          setAllDetails( (prev) => [...prev , input1 , input2 , input3 , input4] )
-          set_numShow(2)
+        <button className='submitMoveToNext' onClick={() => {
+           if( fatherName != "" && mothersName != "" && f_occupation != "" && m_occupation != "" ){
+            setAllDetails( (prev) =>  ({...prev,
+              fatherName : fatherName,
+              mothersName : mothersName,
+              f_occupation : f_occupation,
+              m_occupation : m_occupation
+            })  )
+           }
+           set_numShow(2)
+
         }}>Next</button>
       </div>
     </div>

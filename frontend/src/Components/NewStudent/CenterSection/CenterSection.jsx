@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 import INPUT1 from './INPUT1.jsx'
 import INPUT2 from './INPUT2.jsx'
 import INPUT3 from './INPUT3.jsx'
@@ -9,7 +9,7 @@ import "./center.css"
 export const NumberContext = createContext()
 
 function CenterSection({ num_to_show, set_numShow, text_heading }) {
-  const [allDetails , setAllDetails] = useState([]) 
+  const [ allDetails , setAllDetails ] = useState([])
   const contextValue = {
     num_to_show,
     set_numShow,
@@ -17,6 +17,9 @@ function CenterSection({ num_to_show, set_numShow, text_heading }) {
     setAllDetails
   }
 
+  useEffect( () => {
+    console.log(allDetails)
+  } , [setAllDetails , allDetails] )
 
   return (
     <main className='mainCenter flex'> 
@@ -28,7 +31,7 @@ function CenterSection({ num_to_show, set_numShow, text_heading }) {
         {num_to_show === 1 && <INPUT2 />}
         {num_to_show === 2 && <INPUT3 />}
         {num_to_show === 3 && <INPUT4 />}
-        {num_to_show === 4 && <INPUT5 allDetails={allDetails}/>}
+        {num_to_show === 4 && <INPUT5 allDetails={allDetails} />}
       </NumberContext.Provider>
     </main>
   )

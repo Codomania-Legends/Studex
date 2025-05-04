@@ -70,6 +70,9 @@
 .v {
     flex-direction: column;
 }
+.ansval{
+  cursor: pointer;
+}
 .boxx {
     height: 4em;
     width: 12em;
