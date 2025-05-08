@@ -50,32 +50,41 @@ function INPUT3() {
         </div>
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => {
-          if( course_name != "" && year != "" && program != "" && enrollmentNumber != "" ){
-            setAllDetails( (prev) => ({...prev ,
-              course_name : course_name,
-              year : year,
-              program : program,
-              enrollmentNumber : enrollmentNumber
-             }) )
-             switch(course_name){
+          if (course_name !== "" && year !== "" && program !== "" && enrollmentNumber !== "") {
+            let course_id = null;
+        
+            switch (course_name) {
               case "Bachelor of Computer Science":
-                setAllDetails( (prev) => ({...prev , course_id : 101}) )
+                course_id = 101;
                 break;
               case "Bachelor of Business Administration":
-                setAllDetails( (prev) => ({...prev , course_id : 102}) )
+                course_id = 102;
                 break;
               case "Bachelor of Engineering in Mechanical":
-                setAllDetails( (prev) => ({...prev , course_id : 103}) )
+                course_id = 103;
                 break;
               case "Bachelor of Technology in AI & ML":
-                setAllDetails( (prev) => ({...prev , course_id : 104}) )
+                course_id = 104;
                 break;
               case "Bachelor of Arts in Psychology":
-                setAllDetails( (prev) => ({...prev , course_id : 105}) )
+                course_id = 105;
                 break;
-              }
-              set_numShow(3)
-        }}}>Next</button>
+              default:
+                break;
+            }
+        
+            setAllDetails((prev) => ({
+              ...prev,
+              course_name: course_name,
+              year: year,
+              program: program,
+              enrollmentNumber: enrollmentNumber,
+              course_id: course_id,
+            }));
+        
+            set_numShow(3);
+          }
+        }}>Next</button>
       </div>
     </div>
   )

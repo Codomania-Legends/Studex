@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CourseDetails.css'
-import {Data} from '../Data/Data.jsx'
+import axios from "axios"
+
 function CourseDetails() {
+  const [ Courses , setCourses ] = useState([])
+  async function handleCourseAll() {
+    await axios.get( "http://localhost:5000/course" )
+    .then( (data) => setCourses(data.data) )
+  }
+  handleCourseAll()
   return (
     <>
         <main className="course-main flex"> 
@@ -11,7 +18,7 @@ function CourseDetails() {
           <div className="center-box-div flex">
             <div className="box11-content ">
               {
-                Data.map( (v,i) => {
+                Courses.map( (v,i) => {
                     return(
                       <div key={i} className="content22-details flex"
                       >
@@ -20,19 +27,19 @@ function CourseDetails() {
                             <span>Btech</span>
                           </div>
                           <div className="c_name flex ">
-                            <span>Bachelors of Technology</span>
+                            <span>{v.course_name}</span>
                           </div>
                           <div className="c_duration flex ">
-                            <span>Duration:</span>
+                            <span>Duration: {v.duration}</span>
                           </div>
                         </div>
                         <div className="second-div flex">
                           <div className="total-registration">
-                            <span>Total Registration : </span>
+                            <span>Total Registration : {v.total_registered_students}</span>
                           </div>
                           
                           <div className="duration-time flex">
-                            <span>2yr | 4sem</span>
+                            <span>{v.duration} | {parseInt(v.duration.split(" ")[0]) * 2}</span>
                           </div>
 
                         </div>

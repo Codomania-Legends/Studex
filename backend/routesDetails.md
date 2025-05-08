@@ -15,6 +15,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 | GET    | `/user/:enrollmentNumber` | Get a single student by enrollment number |
 | PUT    | `/user/:enrollmentNumber` | Update student info      |
 | DELETE | `/user/:enrollmentNumber` | Delete student           |
+| PATCH  | `/user/:enrollmentNumber` | Partially update student info |
 
 ### 🔸 POST `/user`
 
@@ -46,7 +47,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 
 ### 🔸 Params
 
-- `enrollmentNumber` (string) – required for GET/PUT/DELETE by ID
+- `enrollmentNumber` (string) – required for GET/PUT/PATCH/DELETE by ID
 
 ---
 
@@ -59,6 +60,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 | GET    | `/course/:course_id`   | Get course by ID              |
 | PUT    | `/course/:course_id`   | Update course                 |
 | DELETE | `/course/:course_id`   | Delete course                 |
+| PATCH  | `/course/:course_id`   | Partially update course info  |
 
 ### 🔸 POST `/course`
 
@@ -76,7 +78,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 
 ### 🔸 Params
 
-- `course_id` (number) – required for GET/PUT/DELETE by ID
+- `course_id` (number) – required for GET/PUT/PATCH/DELETE by ID
 
 ---
 
@@ -89,6 +91,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 | GET    | `/fees/:enrollment_no`       | Get fee record by enrollment number  |
 | PUT    | `/fees/:enrollment_no`       | Update fee record                    |
 | DELETE | `/fees/:enrollment_no`       | Delete fee record                    |
+| PATCH  | `/fees/:enrollment_no`       | Partially update fee record          |
 
 ### 🔸 POST `/fees`
 
@@ -113,7 +116,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 
 ### 🔸 Params
 
-- `enrollment_no` (string) – required for GET/PUT/DELETE by ID
+- `enrollment_no` (string) – required for GET/PUT/PATCH/DELETE by ID
 
 ---
 

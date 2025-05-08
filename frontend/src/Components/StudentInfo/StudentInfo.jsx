@@ -1,11 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './StudentInfo.css'
 import search from '/assets/search.svg'
-import {Data} from '../Data/Data'
+import axios from "axios"
 function StudentInfo() {
   const[ inputVal, setInputVal ] = useState('')
   const[ selected, setSelected ] = useState('')
   const [ value, setValue ] = useState('')
+  const [ Users , setUsers ] = useState([])
+
+  async function handleGetAllUsers() {
+    try {
+      const { data } = await axios.get("http://localhost:5000/user");
+      console.log(data);
+      setUsers(data);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  }
+
+  // Use useEffect to fetch data only once when the component mounts
+  useEffect(() => {
+    handleGetAllUsers();
+  }, []);
+
   return (
     <main className="stdinfo-main flex ">
       <div className="studentinfi-head flex">
@@ -19,16 +36,14 @@ function StudentInfo() {
           placeholder='Student Info' 
           className='search-input'
           value={inputVal}
-          onChange={ (e) => setInputVal(e.target.value) 
-          
-          }
+          onChange={ (e) => setInputVal(e.target.value) }
           />
         </div>
 
         {/* drop down starts here */}
         {inputVal != "" && <div className="drop-down">
           { inputVal &&
-            Data.filter( (v) => 
+            Users.filter( (v) => 
               v?.name?.toLowerCase().includes( inputVal.toLowerCase() ) ||
               v?.enrollment_number?.toLowerCase().includes( inputVal.toLowerCase() )
             ).map( (v,i) => {
@@ -56,7 +71,7 @@ function StudentInfo() {
       </div>
       <div className="content-details flex">
           {
-            Data.map( (v) => {
+            Users.map( (v) => {
               if( v.name == value ){
                 return(
                   <div className='std-content'>

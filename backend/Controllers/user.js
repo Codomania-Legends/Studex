@@ -1,5 +1,6 @@
 const { COURSE } = require( "../MySql/courseModel.js");
-const { GeneralInfo } = require("../MySql/userModel.js");
+const { FEES } = require("../MySql/feesModel.js");
+const { GeneralInfo, ParentInfo } = require("../MySql/userModel.js");
 
 async function PostUserDetailsReqRes(req, res) {
     console.log("Gotcha")
@@ -33,7 +34,29 @@ async function PostUserDetailsReqRes(req, res) {
 async function GetUserDetailsReqRes(req, res) {
     try {
         const users = await GeneralInfo.findAll();
-        return res.status(200).json(users);
+        const courses = await COURSE.findAll();
+        const parentInfo = await ParentInfo.findAll(); // Assuming ParentInfo model exists
+        const feesDetails = await FEES.findAll(); // Assuming FeesDetails model exists
+
+        console.log(users);
+        console.log(courses);
+        console.log(parentInfo);
+        console.log(feesDetails);
+
+        const combinedData = users.map(user => {
+            const course = courses.find(c => c.course_id === user.course_id);
+            const parent = parentInfo.find(p => p.enrollment_number === user.enrollmentNumber);
+            const fees = feesDetails.find(f => f.enrollment_number === user.enrollmentNumber);
+
+            return {
+                ...user.dataValues,
+                courseDetails: course ? course.dataValues : null,
+                parentInfo: parent ? parent.dataValues : null,
+                feesDetails: fees ? fees.dataValues : null
+            };
+        });
+
+        return res.status(200).json(combinedData);
     } catch (error) {
         console.error("Sequelize Fetch Error:", error);
         return res.status(500).json({ msg: "Internal server error", error });
