@@ -51,38 +51,22 @@ function INPUT3() {
       <div className='buttonOfSubmit flex'>
         <button className='submitMoveToNext' onClick={() => {
           if (course_name !== "" && year !== "" && program !== "" && enrollmentNumber !== "") {
-            let course_id = null;
-        
-            switch (course_name) {
-              case "Bachelor of Computer Science":
-                course_id = 101;
-                break;
-              case "Bachelor of Business Administration":
-                course_id = 102;
-                break;
-              case "Bachelor of Engineering in Mechanical":
-                course_id = 103;
-                break;
-              case "Bachelor of Technology in AI & ML":
-                course_id = 104;
-                break;
-              case "Bachelor of Arts in Psychology":
-                course_id = 105;
-                break;
-              default:
-                break;
-            }
-        
-            setAllDetails((prev) => ({
-              ...prev,
+
+            const studentDetails = {
               course_name: course_name,
               year: year,
               program: program,
-              enrollmentNumber: enrollmentNumber,
-              course_id: course_id,
+              enrollmentNumber: enrollmentNumber
+            };
+
+            setAllDetails((prev) => ({
+              ...prev,
+              ...studentDetails,
             }));
-        
+
             set_numShow(3);
+          } else {
+            console.error("Please fill in all fields before proceeding.");
           }
         }}>Next</button>
       </div>

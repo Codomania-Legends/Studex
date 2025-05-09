@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("./connection");
 
 const FEES = sequelize.define("fees_details", {
-  enrollment_no: {
+  enrollmentNumber: {
     type: DataTypes.STRING,
     references: {
       model: "GeneralInfo", // Must match model name

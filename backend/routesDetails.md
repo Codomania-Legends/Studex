@@ -88,7 +88,7 @@ This project is a RESTful API built using **Express** and **Sequelize** for mana
 |--------|------------------------------|--------------------------------------|
 | POST   | `/fees`                      | Add fee record for a student         |
 | GET    | `/fees`                      | Get all fee records                  |
-| GET    | `/fees/:enrollment_no`       | Get fee record by enrollment number  |
+| GET    | `/fees/:course_id`           | Get fee record by course id          |
 | PUT    | `/fees/:enrollment_no`       | Update fee record                    |
 | DELETE | `/fees/:enrollment_no`       | Delete fee record                    |
 | PATCH  | `/fees/:enrollment_no`       | Partially update fee record          |

@@ -39,6 +39,9 @@ function INPUT4() {
               city : city,
               pincode : pincode
             })  )
+            console.log(address)
+            console.log(city)
+            console.log(pincode)
             set_numShow(4)
 
           }

@@ -59,15 +59,15 @@ async function GetAllFeesReqRes(req, res) {
 }
 
 // 🔍 Get fee record by enrollment number
-async function GetFeeByEnrollmentReqRes(req, res) {
-    const { enrollment_no } = req.params;
+async function GetFeeByCourseId(req, res) {
+    const { course_id } = req.params;
 
-    if (!enrollment_no) {
+    if (!course_id) {
         return res.status(400).json({ msg: "Enrollment number is required" });
     }
 
     try {
-        const fee = await FEES.findOne({ where: { enrollment_no } });
+        const fee = await FEES.findOne({ where: { course_id } });
         if (!fee) {
             return res.status(404).json({ msg: "Fee record not found" });
         }
@@ -136,7 +136,7 @@ async function DeleteFeeRecordReqRes(req, res) {
 module.exports = {
     PostFeeDetailsReqRes,
     GetAllFeesReqRes,
-    GetFeeByEnrollmentReqRes,
+    GetFeeByCourseId,
     UpdateFeeDetailsReqRes,
     DeleteFeeRecordReqRes
 };

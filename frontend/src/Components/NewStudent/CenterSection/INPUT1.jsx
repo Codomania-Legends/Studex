@@ -45,6 +45,9 @@ function INPUT1() {
             }) )
             set_numShow(1)
           }
+          console.log(name)
+          console.log(gender)
+          console.log(mobileNumber)
         }}>Next</button>
       </div>
     </div>

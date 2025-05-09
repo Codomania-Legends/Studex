@@ -41,10 +41,10 @@
 }
 .drop-down {
   position: absolute;
-  height: 22em;
+  height: fit-content;
   width: 100%;
   top: 5.7em;
-  border-radius: 2em;
+  border-radius: 1em;
   background-color: #ffffff;
   border-radius: 2em;
   z-index: 1;
@@ -55,7 +55,7 @@
   height: 2em;
   /* border-bottom: 1px solid #bbbbbb; */
   justify-content: flex-start;
-  padding-left: 1em;
+  padding: 0 1em;
   cursor: pointer;
   border-radius: 1em;
   /* overflow: scroll; */
@@ -76,7 +76,8 @@
 .boxx {
     height: 4em;
     width: 12em;
-    background-color: #BABABA;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
     border-radius: 1em;
     flex-direction: column;
     position: absolute;
@@ -124,6 +125,7 @@
   0% {
     transform: rotate(0deg) translateX(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
@@ -131,6 +133,8 @@
   90%{
     box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #ffffffcc; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(-180deg) translateX(20em) translateY(7em) rotate(180deg);
@@ -140,10 +144,13 @@
   0% {
     transform: rotate(0deg) translateX(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(180deg) translateX(-20em) translateY(-4em) rotate(-180deg);
@@ -153,10 +160,13 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(160deg) translateX(-19em) translateY(3em) rotate(-160deg);
@@ -167,10 +177,13 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(160deg) translateX(-16em) translateY(-21em) rotate(-160deg);
@@ -180,10 +193,13 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(-160deg) translateX(23em) translateY(-15em) rotate(160deg);
@@ -193,10 +209,13 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(160deg) translateX(5em) translateY(-10em) rotate(-160deg);
@@ -206,10 +225,13 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(-160deg) translateX(11em) translateY(-19em) rotate(160deg);
@@ -219,14 +241,29 @@
   0% {
     transform: rotate(0deg) translateX(0) translateY(0) rotate(0deg);
     box-shadow: 0px 0px 0px rgb(0 0 0 / 25%);
+    background-color: #fff;
   }
   50%{
     box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
   }
+  90%{ background-color: transparent; }
+  95%{ background-color: #fff; }
   100% {
     box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
     transform: rotate(160deg) translateX(3em) translateY(5em) rotate(-160deg);
   }
 }
 
-  
+span.valuesStudentInfo.flex {
+  font-size: small;
+  font-weight: 700;
+  box-sizing: border-box;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.filteredData{
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  width: 100%;
+}

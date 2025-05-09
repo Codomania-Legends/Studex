@@ -45,6 +45,10 @@ function INPUT2() {
               f_occupation : f_occupation,
               m_occupation : m_occupation
             })  )
+            console.log(fatherName)
+            console.log(mothersName)
+            console.log(f_occupation)
+            console.log(m_occupation)
            }
            set_numShow(2)
 

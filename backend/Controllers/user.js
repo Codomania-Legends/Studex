@@ -1,21 +1,28 @@
 const { COURSE } = require( "../MySql/courseModel.js");
 const { FEES } = require("../MySql/feesModel.js");
-const { GeneralInfo, ParentInfo } = require("../MySql/userModel.js");
+const { GeneralInfo, ParentInfo, AddressInfo, BusInfo } = require("../MySql/userModel.js");
 
 async function PostUserDetailsReqRes(req, res) {
-    console.log("Gotcha")
     const {
         name, enrollmentNumber, gender, mobileNumber,
         fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
-        address, city, pincode, busFacility, busStop, course_id // Added course_id
+        address, city, pincode, busFacility, busStop
     } = req.body;
 
     try {
-        console.log(req.body)
+        const courseMapping = {
+            "Bachelor of Computer Science": 101,
+            "Bachelor of Business Administration": 102,
+            "Bachelor of Engineering in Mechanical": 103,
+            "Bachelor of Technology in AI & ML": 104,
+            "Bachelor of Arts in Psychology": 105,
+          };
+
+          const course_id = courseMapping[course_name] || null;
         const newUser = await GeneralInfo.create({
             name, enrollmentNumber, gender, mobileNumber,
             fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
-            address, city, pincode, busFacility : busFacility || false , busStop : busStop || false
+            address, city, pincode, busFacility : busFacility || false , busStop : busStop || false, course_id
         });
 
         const newRegistredStudent = await COURSE.increment('total_registered_students', {
@@ -33,29 +40,34 @@ async function PostUserDetailsReqRes(req, res) {
 
 async function GetUserDetailsReqRes(req, res) {
     try {
+        // Fetch all required data
         const users = await GeneralInfo.findAll();
         const courses = await COURSE.findAll();
-        const parentInfo = await ParentInfo.findAll(); // Assuming ParentInfo model exists
-        const feesDetails = await FEES.findAll(); // Assuming FeesDetails model exists
+        const parentInfo = await ParentInfo.findAll();
+        const feesDetails = await FEES.findAll();
+        const addressInfo = await AddressInfo.findAll();
+        const busInfo = await BusInfo.findAll();
 
-        console.log(users);
-        console.log(courses);
-        console.log(parentInfo);
-        console.log(feesDetails);
 
+        // Combine data for each user
         const combinedData = users.map(user => {
             const course = courses.find(c => c.course_id === user.course_id);
-            const parent = parentInfo.find(p => p.enrollment_number === user.enrollmentNumber);
-            const fees = feesDetails.find(f => f.enrollment_number === user.enrollmentNumber);
+            const parent = parentInfo.find(p => p.enrollmentNumber === user.enrollmentNumber);
+            const fees = feesDetails.find(f => f.enrollmentNumber === user.enrollmentNumber);
+            const address = addressInfo.find(a => a.enrollmentNumber === user.enrollmentNumber);
+            const bus = busInfo.find(b => b.enrollmentNumber === user.enrollmentNumber);
 
             return {
                 ...user.dataValues,
                 courseDetails: course ? course.dataValues : null,
                 parentInfo: parent ? parent.dataValues : null,
-                feesDetails: fees ? fees.dataValues : null
+                feesDetails: fees ? fees.dataValues : null,
+                addressInfo: address ? address.dataValues : null,
+                busInfo: bus ? bus.dataValues : null
             };
         });
 
+        // Return the combined data
         return res.status(200).json(combinedData);
     } catch (error) {
         console.error("Sequelize Fetch Error:", error);
