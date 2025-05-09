@@ -29,6 +29,12 @@ main.course-main.flex {
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
+    animation: popAnimation 0.4s linear 1;
+}
+@keyframes popAnimation{
+    0% {transform: scale(0);}
+    70%{ transform: scale(1.2); }
+    100%{ transform: scale(1); }
 }
 .box11-content::-webkit-scrollbar {
     width: 6px;
