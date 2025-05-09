@@ -27,8 +27,72 @@
     height: 100%;
     width: 80%;
 }
-.fees-bill.flex {
+.fees-bill{
     height: 70%;
     width: 50%;
-    background: aliceblue;
+    position: relative;
 }
+.sem-bill-info {
+    background-image: linear-gradient(to right, #21437A, #4285F4);
+    height: 85%;
+    width: 70%;
+    border-radius: 3em;
+    color: white;
+    flex-direction: column;
+}
+.course-name {
+    height: 15%;
+    width: 100%;
+}
+.sem-fees-deatils {
+    height: 85%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+.fees-head.flex {
+    height: 1.6em;
+}
+.rupee-icon {
+    height: 1.6em;
+}
+.rupee-img {
+    height: 1.2em;
+}
+.line1 {
+    width: 100%;
+    height: 1em;
+    justify-content: end;
+}
+.line2 {
+    width: 100%;
+    height: 1em;
+    justify-content: start;
+}
+hr {
+    height: 1px;
+    background-color: white;
+    width: 85%;
+}
+.fee-drop-down {
+    position: absolute;
+    height: 22em;
+    width: 100%;
+    top: 4.5em;
+    border-radius: 2em;
+    background-color: #ffffff;
+    border-radius: 2em;
+    z-index: 1;
+    /* overflow: scroll; */
+  }
+  .fee-details {
+    background-color: #ffffff;
+    height: 2em;
+    /* border-bottom: 1px solid #bbbbbb; */
+    justify-content: flex-start;
+    padding-left: 1em;
+    cursor: pointer;
+    border-radius: 1em;
+    /* overflow: scroll; */
+  }
