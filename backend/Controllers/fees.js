@@ -1,6 +1,6 @@
 const { FEES } = require("../MySql/feesModel.js");
 
-// ✅ Create a new fee record
+// Function to create a new fee record
 async function PostFeeDetailsReqRes(req, res) {
     const {
         enrollment_no,
@@ -47,7 +47,7 @@ async function PostFeeDetailsReqRes(req, res) {
     }
 }
 
-// 📋 Get all fee records
+// Function to get all fee records
 async function GetAllFeesReqRes(req, res) {
     try {
         const fees = await FEES.findAll();
@@ -58,7 +58,7 @@ async function GetAllFeesReqRes(req, res) {
     }
 }
 
-// 🔍 Get fee record by enrollment number
+// Function to get a fee record by course ID
 async function GetFeeByCourseId(req, res) {
     const { course_id } = req.params;
 
@@ -78,7 +78,7 @@ async function GetFeeByCourseId(req, res) {
     }
 }
 
-// ✏️ Update fee record by enrollment number
+// Function to update a fee record by enrollment number
 async function UpdateFeeDetailsReqRes(req, res) {
     const { enrollment_no } = req.params;
     const updatedData = req.body;
@@ -108,7 +108,7 @@ async function UpdateFeeDetailsReqRes(req, res) {
     }
 }
 
-// ❌ Delete fee record by enrollment number
+// Function to delete a fee record by enrollment number
 async function DeleteFeeRecordReqRes(req, res) {
     const { enrollment_no } = req.params;
 
@@ -132,7 +132,6 @@ async function DeleteFeeRecordReqRes(req, res) {
     }
 }
 
-// 📦 Export all functions
 module.exports = {
     PostFeeDetailsReqRes,
     GetAllFeesReqRes,

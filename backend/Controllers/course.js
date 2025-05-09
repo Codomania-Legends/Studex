@@ -1,6 +1,6 @@
 const { COURSE } = require("../MySql/courseModel.js");
 
-// ✅ Create a new course
+// Function to create a new course
 async function PostCourseDetailsReqRes(req, res) {
     const {
         course_id,
@@ -63,7 +63,7 @@ async function PostCourseDetailsReqRes(req, res) {
     }
 }
 
-// 📋 Get all courses
+// Function to get all courses
 async function GetAllCoursesReqRes(req, res) {
     try {
         const courses = await COURSE.findAll();
@@ -74,7 +74,7 @@ async function GetAllCoursesReqRes(req, res) {
     }
 }
 
-// 🔍 Get a course by ID
+// Function to get a course by its ID
 async function GetSingleCourseReqRes(req, res) {
     const { course_id } = req.params;
 
@@ -94,7 +94,7 @@ async function GetSingleCourseReqRes(req, res) {
     }
 }
 
-// ✏️ Update a course by ID
+// Function to update a course by its ID
 async function UpdateCourseReqRes(req, res) {
     const { course_id } = req.params;
     const updatedData = req.body;
@@ -124,7 +124,7 @@ async function UpdateCourseReqRes(req, res) {
     }
 }
 
-// ❌ Delete a course by ID
+// Function to delete a course by its ID
 async function DeleteCourseReqRes(req, res) {
     const { course_id } = req.params;
 
