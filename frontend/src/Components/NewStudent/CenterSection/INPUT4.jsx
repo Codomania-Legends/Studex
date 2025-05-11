@@ -45,6 +45,9 @@ function INPUT4() {
             set_numShow(4)
 
           }
+          else {
+            alert("Please fill in all fields before proceeding.");
+          }
         }}>Next</button>
       </div>
     </div>

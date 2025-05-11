@@ -49,9 +49,11 @@ function INPUT2() {
             console.log(mothersName)
             console.log(f_occupation)
             console.log(m_occupation)
+            set_numShow(2)
            }
-           set_numShow(2)
-
+           else{
+            alert("Please fill in all fields before proceeding.")
+          }
         }}>Next</button>
       </div>
     </div>

@@ -66,7 +66,7 @@ function INPUT3() {
 
             set_numShow(3);
           } else {
-            console.error("Please fill in all fields before proceeding.");
+            alert("Please fill in all fields before proceeding.");
           }
         }}>Next</button>
       </div>
