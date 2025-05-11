@@ -9,7 +9,8 @@ async function PostUserDetailsReqRes(req, res) {
         fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
         address, city, pincode, busFacility, busStop
     } = req.body;
-
+    console.log(busFacility)
+    console.log(busStop)
     try {
         const courseMapping = {
             "Bachelor of Computer Science": 101,
@@ -23,7 +24,7 @@ async function PostUserDetailsReqRes(req, res) {
         const newUser = await GeneralInfo.create({
             name, enrollmentNumber, gender, mobileNumber,
             fatherName, f_occupation, mothersName, m_occupation, f_mobileNumber, course_name, program, year, semester,
-            address, city, pincode, busFacility: busFacility || false, busStop: busStop || false, course_id
+            address, city, pincode, busFacility: busFacility === "Yes" ? true : false, busStop: busStop || null, course_id
         });
 
         await COURSE.increment('total_registered_students', {
@@ -47,14 +48,17 @@ async function PostUserDetailsReqRes(req, res) {
             pincode
         });
 
+        const arr = [ "YES" , "YEs" , "Yes" , "yes" ]
+
         await BusInfo.create({
             enrollmentNumber,
-            busFacility: busFacility || null,
+            busFacility: (arr.some( (v) => v === busFacility )) ? true : false,
             busStop: busStop || null
         });
 
         return res.status(201).json({ msg: "User created successfully!", user: newUser });
     } catch (error) {
+        console.log(error)
         return res.json({ msg: "User Already Exists" });
     }
 }
