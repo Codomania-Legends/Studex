@@ -7,7 +7,6 @@ function INPUT5({allDetails}) {
   const { num_to_show, set_numShow, text_heading , setAllDetails } = useContext(NumberContext)
   const [ busFacility , setBus ] = useState("")
   const [ busStop , setStop ] = useState("")
-  console.log(allDetails)
   return (
     <div className='wrapper flex'>
       <div className='circleDivNumber flex'>{num_to_show+1}</div>
@@ -19,7 +18,6 @@ function INPUT5({allDetails}) {
           <input 
             value={busFacility}
             onChange={(e) => setBus(e.target.value)}
-            
             name="nameInput" className = "nameInput" placeholder='Yess/No'/>
         </div>
 
@@ -30,8 +28,6 @@ function INPUT5({allDetails}) {
           <input 
             value={busStop}
             onChange={(e) => setStop(e.target.value)}
-            
-          
             name="mobileNumInput" className = "mobileNumInput" placeholder='Enter Bus Stop'/>
         </div>
       </div>
@@ -59,8 +55,8 @@ function INPUT5({allDetails}) {
             "address": allDetails.address ,
             "city": allDetails.city ,
             "pincode": allDetails.pincode ,
-            "busFacility": allDetails.busFacility ,
-            "busStop": allDetails.busStop
+            "busFacility": busFacility ,
+            "busStop": busStop
           })
           alert(res?.data?.msg || res?.data.err)
           set_numShow(0)
